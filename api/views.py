@@ -11,7 +11,7 @@ class InfoView(APIView):
     @staticmethod
     def get(request):
 
-        slack_name = "adedolapo27"
+        slack_name = ""
 
         current_day = datetime.datetime.now(pytz.utc).strftime('%A')
 

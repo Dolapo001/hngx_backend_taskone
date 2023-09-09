@@ -16,8 +16,6 @@ class InfoView(APIView):
         current_day = datetime.datetime.now(pytz.utc).strftime('%A')
 
         current_time = datetime.datetime.now(pytz.utc)
-        utc_offset = current_time.utcoffset().total_seconds() / 3600
-        valid_utc = abs(utc_offset) <= 2
 
         track = "Backend"
 
@@ -28,14 +26,13 @@ class InfoView(APIView):
         source_code_url = "https://github.com/LoneStarrD/hngx_backend_taskone.git"
 
         data = {
-            "SlackName": slack_name,
-            "DayOfWeek": current_day,
-            "CurrentUTCTime": current_time,
-            "UTCOffsetValid": valid_utc,
-            "Track": track,
-            "GitHubFileURL": file_url,
-            "GitHubSourceCodeURL": source_code_url,
-            "StatusCode": status_code,
+            "slack_name": slack_name,
+            "current_day": current_day,
+            "utc_time": current_time,
+            "track": track,
+            "github_file_url": file_url,
+            "github_repo_url": source_code_url,
+            "statuscode": status_code,
         }
 
         serializer = InfoSerializer(data)

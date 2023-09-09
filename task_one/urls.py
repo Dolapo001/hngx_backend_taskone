@@ -17,10 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from api.views import InfoView
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', InfoView, name='InfoView'),
-
+    path('api/', include('api.urls')),
 ]

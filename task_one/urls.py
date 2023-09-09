@@ -21,6 +21,6 @@ from api.views import InfoView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', InfoView, name=InfoView),
+    path('api/', InfoView, name='InfoView'),
 
 ]

@@ -17,7 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from api.views import InfoView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api?slack_name=adedolapo27&track=backend/'),
+    path('api/', InfoView, name=InfoView),
+
 ]
